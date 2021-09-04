@@ -5,18 +5,30 @@
 213050027  
 
 **Contribution:**  
-213050082: complete q1 and complete q4  
+213050082: complete q1(both part A and part B) and complete q4  
 21q050004: complete q2 and complete q5    
 213050027: complete q3 and complete q6  
 
 **References:**  
-q1
+q1  
 
-q2
+Part A  
+1. *basics:*  https://www.geeksforgeeks.org/python-main-function/  
+2. *islice:*  https://www.geeksforgeeks.org/python-itertools/  
+3. *looping:* https://www.geeksforgeeks.org/python-for-loops/?ref=lbp  
+
+Part B  
+1. *generator and yield:*  
+	https://www.youtube.com/watch?v=D613yh18fQU  
+	https://www.geeksforgeeks.org/generators-in-python/  
+	https://www.youtube.com/watch?v=LdBCcYl7Dw8  
+	https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/  
+
+q2  
 
 1. *Lambda, map, reduce, filter tutorial:* https://www.geeksforgeeks.org/python-lambda-anonymous-functions-filter-map-reduce/  
 
-q3
+q3  
 
 1. *CoolWarm theme usage for plots:* https://www.programcreek.com/python/example/90949/matplotlib.cm.coolwarm  
 2. *Skipping the index of file:* https://www.kite.com/python/answers/how-to-skip-the-first-line-of-a-csv-file-in-python  
@@ -27,16 +39,20 @@ q3
 7. *Changing view of the plot:* https://stackoverflow.com/questions/33084853/set-matplotlib-view-to-be-normal-to-the-x-y-plane-in-python  
 8. *Reading csv file for data visualization:* https://www.geeksforgeeks.org/visualize-data-from-csv-file-in-python/  
 
-q4
+q4  
 
-q5
+1. *csv file reading writing:*  https://docs.python.org/3/library/csv.html  
+2. *datetime formatting:*       https://docs.python.org/3/library/datetime.html  
+3. *python data structures:*    https://docs.python.org/3/tutorial/datastructures.html  
+
+q5  
 
 1. *Classes:* https://docs.python.org/3/tutorial/classes.html  
 2. *Comparison:* https://docs.python.org/3/reference/datamodel.html#object.__lt__  
 3. *Iterable:* https://twiserandom.com/python/python-iterable-and-iterator-a-tutorial/index.html  
 4. *Printing class objects:* https://www.geeksforgeeks.org/print-objects-of-a-class-in-python/  
 
-q6
+q6  
 
 1. *Opening a file:* https://www.w3schools.com/python/python_file_open.asp
 
