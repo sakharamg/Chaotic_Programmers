@@ -10,7 +10,7 @@
 213050027: complete q3 and complete q6  
 
 **References:**  
-1) q1
+1) sq1
 
 2) q2
 
