@@ -10,13 +10,13 @@
 213050027: complete q3 and complete q6  
 
 **References:**  
-1. q1
+1) q1
 
-2. q2
+2) q2
 
-2.1. *Lambda, map, reduce, filter tutorial:* https://www.geeksforgeeks.org/python-lambda-anonymous-functions-filter-map-reduce/  
+2.1 *Lambda, map, reduce, filter tutorial:* https://www.geeksforgeeks.org/python-lambda-anonymous-functions-filter-map-reduce/  
 
-3. q3
+3) q3
 
 3.1. *CoolWarm theme usage for plots:* https://www.programcreek.com/python/example/90949/matplotlib.cm.coolwarm  
 *Skipping the index of file:* https://www.kite.com/python/answers/how-to-skip-the-first-line-of-a-csv-file-in-python  
