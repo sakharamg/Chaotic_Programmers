@@ -35,9 +35,10 @@ q3
 3. *Scatter plots, adding colors, adding colorbar:* https://www.youtube.com/watch?v=VolIkTkYqMw  
 4. *Moving colorbar to right to avoid overlapping with z label: *https://stackoverflow.com/questions/16032389/pad-inches-0-and-bbox-inches-tight-makes-the-plot-smaller-than-declared-figsiz  
 5. *Making labels bold* https://stackoverflow.com/questions/29766827/matplotlib-make-axis-ticks-label-for-dates-bold  
-6. *making scatter plots and panning through applet to get angles used for changing view of graph:* https://www.youtube.com/watch?v=wJQIGXSq504&list=WL&index=1  
-7. *Changing view of the plot:* https://stackoverflow.com/questions/33084853/set-matplotlib-view-to-be-normal-to-the-x-y-plane-in-python  
+6. *Making scatter plots :* https://www.youtube.com/watch?v=wJQIGXSq504&list=WL&index=1  
+7. *Changing view of the plot:* https://matplotlib.org/devdocs/api/_as_gen/matplotlib.axes.Axes.set_box_aspect.html 
 8. *Reading csv file for data visualization:* https://www.geeksforgeeks.org/visualize-data-from-csv-file-in-python/  
+9. *Changing dimension of figure:* https://www.geeksforgeeks.org/how-to-change-the-size-of-figures-drawn-with-matplotlib/  
 
 q4  
 

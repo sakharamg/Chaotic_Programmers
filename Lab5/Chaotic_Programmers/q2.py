@@ -18,6 +18,6 @@ def prime(n):
 if __name__ == "__main__":
     """Main function
     """	
-    n=100
+    n=10
     L=prime(n)
     print(L)

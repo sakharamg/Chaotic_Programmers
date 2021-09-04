@@ -33,7 +33,7 @@ def plotgraph(inp_file,out_file):
     y=np.array(y)
     z=np.array(z)
 
-    fig=plt.figure() #create a figure
+    fig=plt.figure(figsize = (11, 9)) #create a figure
     ax=fig.add_subplot(111,projection='3d') # figure with 1x1x1 size grids and project in 3d
     # pass all 3 axis, color based on z axis
     # set the coloring will be based on coolwarm theme and have circles (marker='o') of size 12
@@ -42,17 +42,14 @@ def plotgraph(inp_file,out_file):
     ax.set_xlabel("X-axis",weight='bold')
     ax.set_ylabel("Y-axis",weight='bold')
     ax.set_zlabel("Z-axis",weight='bold')
+    # Change view angle of figure to match the sample figure
+    ax.set_box_aspect((1,1,1))
     # hide the grid as in the sample image
     ax.grid(False)
-    # display a colorbar and shrink to 1/2
-    # padded the color bar so that it doesn't overlap with label just as shown in the sample image
-    fig.colorbar(p,shrink=0.5,pad=0.1) # If it was supposed to be overlapped with the z-axis label then remove pad option from colorbar()
-    # Change the angle to match with the sample image
-    ax.view_init(azim=-60,elev=23) #I changed the angle to make it look like the sample image, please comment this line if changing the angle is not required
+    # display a colorbar and shrink to 1/2 and pad some space, changed the color bar size to mathc the sample figure
+    fig.colorbar(p,shrink=0.5,aspect=6,pad=0.1)
     fig.savefig(out_file, bbox_inches='tight') #save the figure into out_file
-    # Return the file name
-    output="./"+out_file
-    return output
+    
 import sys
 if __name__=="__main__":
     inp_file = sys.argv[1]
