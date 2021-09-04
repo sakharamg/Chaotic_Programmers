@@ -14,11 +14,11 @@
 
 2. q2
 
-*Lambda, map, reduce, filter tutorial:* https://www.geeksforgeeks.org/python-lambda-anonymous-functions-filter-map-reduce/  
+2.1 *Lambda, map, reduce, filter tutorial:* https://www.geeksforgeeks.org/python-lambda-anonymous-functions-filter-map-reduce/  
 
 3. q3
 
-*CoolWarm theme usage for plots:* https://www.programcreek.com/python/example/90949/matplotlib.cm.coolwarm  
+3.1 *CoolWarm theme usage for plots:* https://www.programcreek.com/python/example/90949/matplotlib.cm.coolwarm  
 *Skipping the index of file:* https://www.kite.com/python/answers/how-to-skip-the-first-line-of-a-csv-file-in-python  
 *Scatter plots, adding colors, adding colorbar:* https://www.youtube.com/watch?v=VolIkTkYqMw  
 *Moving colorbar to right to avoid overlapping with z label: *https://stackoverflow.com/questions/16032389/pad-inches-0-and-bbox-inches-tight-makes-the-plot-smaller-than-declared-figsiz  
