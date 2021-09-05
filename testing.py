@@ -50,3 +50,10 @@
 #corrupt1.update_amount("p1",9999)
 #print("Checking for amount update",corrupt1)
 #print("Person1 updated total black: \o-o/",corrupt1.total_black_money())
+
+##TEST Q6--DONE
+#from q6 import *
+#print(read("input.txt"))
+#print(read("././input.txt"))
+#print(read("../chaotic_programmers_code/input.txt"))
+#print(type(read("input.txt")))
