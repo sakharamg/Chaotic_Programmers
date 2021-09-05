@@ -3,6 +3,7 @@ def nList(L,N):                           # taking List and number of splits fro
     # write ypur code here.
  import itertools
  #storing length of list in end
+ list1=[]
  end=len(L)
  temp=[]
  for j in range(N):
