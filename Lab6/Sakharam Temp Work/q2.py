@@ -8,10 +8,11 @@ class TWODMAT:
         #arr-array of shape (n) 
         #k-kernal size
         import numpy as np
-        return np.cumsum(np.pad(arr, (0, k-1), 'constant', constant_values=(0,0)),axis=0)-np.cumsum(np.pad(arr, (k, 0), 'constant', constant_values=(0,0)))[0:len(arr)+k-1]
+        return np.cumsum(np.pad(np.array(arr), (0, k-1), 'constant', constant_values=(0,0)),axis=0)-np.cumsum(np.pad(np.array(arr), (k, 0), 'constant', constant_values=(0,0)))[0:len(np.array(arr))+k-1]
         
     def top_pos(arr,k):
         #arr-a matrix of shape (m,n). 
         #k-top k values
-	return np.flip(np.argsort(arr))[:,:k]
+	import numpy as np
+	return np.flip(np.argsort(np.array(arr)))[:,:k]
 if __name__ == '__main__':
