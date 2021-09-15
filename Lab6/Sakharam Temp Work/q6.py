@@ -26,8 +26,6 @@ def processData( input_path, output_path ):
     output_data[1]["mbalance"]= 0
     output_data[1]["fcount"]= 0
     output_data[1]["fbalance"]= 0
-    print(input_path)
-    print(output_path)
     f = open(input_path,)
     data = json.load(f)
     for person in data:
