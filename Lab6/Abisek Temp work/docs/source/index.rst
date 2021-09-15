@@ -6,9 +6,6 @@
 Welcome to Lab 6's documentation!
 =================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
 **Lab 6** is a Python assignment
 
@@ -16,9 +13,9 @@ Welcome to Lab 6's documentation!
 
    This project is under active development.
 
-Indices and tables
-==================
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. toctree::
+  questions
