@@ -2,9 +2,21 @@ import numpy as np
 import sys
 from matplotlib import pyplot as plt
 
-# write your code here
 
 def decode_image(img):
+		"""
+	    Input: 
+		    img: numpy matrix
+		    [Receives the image as a numpy matrix]
+	    
+	    Aim:
+	    	Perform Linear contrast enhancement in the given matrix and return the scaled output.
+	    
+	    Output:
+	    	img: numpy matrix
+	    	[Linear contrast enhanced numpy matrix]
+
+	    """
 	a = 0
 	b = 255
 	c = np.min(img)

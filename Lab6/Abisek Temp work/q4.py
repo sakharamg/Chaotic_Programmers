@@ -7,12 +7,51 @@ import sys
 
 
 def get_data(input_path, allowed_org_types, allowed_methods):
+	"""
+    Input: 
+	    inp_input_pathfile: String 
+	    [It is the address of the input csv file.]
+	    
+	    allowed_org_types: List 
+	    [It contains the list of org types allowed]. 
+	    
+	    allowed_methods: List
+	    [It contains the allowed data breach methods]
+    
+    Aim:
+    	Returns a dataframe only consisting values from allowed org types and methods
+    
+    Output:
+    	filtered_df = pandas.dataframe
+    	[A dataframe only consisting values from allowed org types and methods]
+
+    """
 	dataframe = pd.read_csv(input_path)
 	filtered_df = dataframe.loc[(dataframe['Organization type'].isin(allowed_org_types)) & (dataframe['Method'].isin(allowed_methods))]
 	return filtered_df
 
 
 def format_organization_data(data_frame, org_type):
+	"""
+    Input: 
+	    data_frame: pandas.dataframe 
+	    [Dataframe containing only the allowed org_types and methods]
+	    
+	    org_type: String 
+	    [It receives the current org type to be processed]. 
+	    
+    
+    Aim:
+    	Returns a set of years and number of records for that year in particular org_type
+    
+    Output:
+    	updated_x_plots : pandas.dataframe
+    	[Contains list of years for that org_type]
+
+    	updated_y_plots : pandas.dataframe
+    	[Returns average number of records for that year for a particular org_type. nan value is inserted if no value is present]
+
+    """
 	data_frame.Year = pd.Categorical(data_frame.Year)
 	grouped_df = data_frame.groupby(['Organization type','Year'], as_index = False)['Records'].mean()
 	grouped_filtered_df = grouped_df.loc[(grouped_df['Organization type'] == org_type)]
@@ -22,6 +61,22 @@ def format_organization_data(data_frame, org_type):
 
 
 def plot_organization_data(filtered_df, allowed_org_types):
+	"""
+    Input: 
+	    filtered_df: pandas.dataframe 
+	    [Dataframe containing only the allowed org_types and methods]
+	    
+	    allowed_org_types: List 
+	    [It contains the list of org types allowed]. 
+	    
+    
+    Aim:
+    	Loop through all allowed org_types, and for each org_type plot a line showing the mean no. of data breach records per year for that type.
+    
+    Output:
+		organization.png, is the image of the plot generated and it is stored in PWD.    	
+
+    """
 	mpl.style.use('default')
 	fig, ax = plt.subplots(figsize = (12, 6))
 	for org_type in allowed_org_types:
@@ -36,6 +91,20 @@ def plot_organization_data(filtered_df, allowed_org_types):
 	plt.clf()
 
 def plot_methods_data(filtered_df):
+	"""
+    Input: 
+	    filtered_df: pandas.dataframe 
+	    [Dataframe containing only the allowed org_types and methods]
+	    
+	    
+    
+    Aim:
+    	Plot a boxplot for each method of data breach, showing the min and max records of data breach for each year.
+    
+    Output:
+    	method.png, is the image of the plot generated and it is stored in PWD.    	
+
+    """
 	sns.boxplot(x='Year', y='Records', hue='Method',data=filtered_df)
 	plt.yscale('log')
 	plt.legend(loc='upper left', title = "Method")
