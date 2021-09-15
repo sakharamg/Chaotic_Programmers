@@ -1,0 +1,7 @@
+q2 module
+=========
+
+.. automodule:: q2
+   :members:
+   :undoc-members:
+   :show-inheritance:

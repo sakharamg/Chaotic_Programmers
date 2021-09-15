@@ -4,6 +4,10 @@ import shutil
 import sys
 
 def function_q3(inp_file_path, out_folder_path):
+    """
+    Input:
+    	inp_file_path: 
+    """
     if os.path.isdir(out_folder_path):
         os.rmdir(out_folder_path)
     os.mkdir(out_folder_path)

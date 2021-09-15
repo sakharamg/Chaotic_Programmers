@@ -2,6 +2,14 @@ import json
 
 
 def processData( input_path, output_path ):
+    """
+    Description:
+    	Generate a json file that seperated age groups and save their tids, name, balance(gender-wise) and counts(gender-wise)
+
+    Arguments:
+    	input_path: path to the input json file
+    	output_path: path to the output json file
+    """
     '''  write your code here '''
     output_data=[{},{}]
     output_data[0]["age_grp"]="21-30"
