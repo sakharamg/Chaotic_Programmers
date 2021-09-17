@@ -38,32 +38,97 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="q1.alohomora">
 <span class="sig-prename descclassname"><span class="pre">q1.</span></span><span class="sig-name descname"><span class="pre">alohomora</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#q1.alohomora" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><dl class="simple">
+<dt>Arguments:</dt><dd><p>‘n’: integer
+‘m’: integer that divides n</p>
+</dd>
+<dt>Descripton: </dt><dd><p>Checkerboard pattern matrix</p>
+</dd>
+<dt>Return:</dt><dd><p>returns a checkerboard pattern matrix of dimension NxN which considers each block of dimension MxM as a cell for the pattern.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="q1.avada_kedavra">
 <span class="sig-prename descclassname"><span class="pre">q1.</span></span><span class="sig-name descname"><span class="pre">avada_kedavra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#q1.avada_kedavra" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><dl class="simple">
+<dt>Arguments:</dt><dd><p>‘my_list’: a list of 25 integers</p>
+</dd>
+<dt>Descripton: </dt><dd><ol class="arabic simple">
+<li><p>Create an array ‘a0’ from this list ‘my_list’</p></li>
+<li><p>reshape a0 to create a 5X5 matrix a1</p></li>
+<li><p>change the central element of a1 to 0</p></li>
+<li><p>make a copy of a1 and flatten it (call it a1cpy)</p></li>
+<li><p>multiply each element of a1cpy by 0.7</p></li>
+</ol>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="q1.expelliarmus">
 <span class="sig-prename descclassname"><span class="pre">q1.</span></span><span class="sig-name descname"><span class="pre">expelliarmus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#q1.expelliarmus" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><dl class="simple">
+<dt>Arguments:</dt><dd><p>‘arr’: float Ndarray; dim: Nx3, 
+‘theta’: float; 0≤theta&lt;360 (in degrees)
+‘axis’: str; axis ∈ {‘X’,’Y’,’Z’}</p>
+</dd>
+<dt>Descripton: </dt><dd><p>Rotate counter-clockwise by angle theta (rotate all N (3-dimensional) points of the matrix about the given axis)</p>
+</dd>
+<dt>Return:</dt><dd><p>float Ndarray; dim: Nx3</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="q1.glisseo">
 <span class="sig-prename descclassname"><span class="pre">q1.</span></span><span class="sig-name descname"><span class="pre">glisseo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#q1.glisseo" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><dl class="simple">
+<dt>Arguments:</dt><dd><p>‘P’: string, eg. ‘2 2; 3 3’
+‘Q’: string, eg. ‘1 1; 4 4’
+‘R’: string, eg. ‘5 5; 6 6’
+‘S’: string, eg. ‘7 7; 8 8’</p>
+</dd>
+<dt>Descripton: </dt><dd><p>Interpret the string to matrix and return the numpy matrix in the form [[P`,Q`],[R`,S`]] as given in the problem statement</p>
+</dd>
+<dt>Return:</dt><dd><p>return the numpy matrix</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="q1.incendio">
 <span class="sig-prename descclassname"><span class="pre">q1.</span></span><span class="sig-name descname"><span class="pre">incendio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_integer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#q1.incendio" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><dl class="simple">
+<dt>Arguments:</dt><dd><p>‘my_integer’: an even integer</p>
+</dd>
+<dt>Descripton: </dt><dd><ol class="arabic simple">
+<li><p>create an array ‘arng0’ of shape (3,2) containing consecutive even numbers starting from ‘my_integer’, arranged along rows</p></li>
+<li><p>create another array ‘arng1’ of shape ((4,3)) containing consecutive numbers starting from ‘my_integer’ arranged along columns</p></li>
+<li><p>multiply transpose of arng0 with transpose of arng1 to get mult0</p></li>
+<li><p>take min of mult0 along its rows and store it in v0</p></li>
+<li><p>reshape v0 to make it a column vector:</p></li>
+<li><p>square all the elements present in base0</p></li>
+<li><p>store the sum of all elements of base0 in ans</p></li>
+</ol>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="q1.reducio">
 <span class="sig-prename descclassname"><span class="pre">q1.</span></span><span class="sig-name descname"><span class="pre">reducio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">W</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#q1.reducio" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><dl class="simple">
+<dt>Arguments:</dt><dd><p>‘X’: Three dimensional matrix with shape =&gt; {B,S,F}
+‘W’: Two dimensional matrix with shape =&gt; {N,F}</p>
+</dd>
+<dt>Descripton: </dt><dd><p>Perform matrix multiplication such that you get the result in desired shape</p>
+</dd>
+<dt>Return:</dt><dd><p>numpy matrix after performing batch matrix multiplication (i.e) ‘X’ &#64; ‘W’.T and transforming to shape {B,N,S}</p>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 

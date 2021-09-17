@@ -33,8 +33,87 @@
 
           <div class="body" role="main">
             
-  <section id="q4-module">
-<h1>q4 module<a class="headerlink" href="#q4-module" title="Permalink to this headline">¶</a></h1>
+  <section id="module-q4">
+<span id="q4-module"></span><h1>q4 module<a class="headerlink" href="#module-q4" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="q4.format_organization_data">
+<span class="sig-prename descclassname"><span class="pre">q4.</span></span><span class="sig-name descname"><span class="pre">format_organization_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">org_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#q4.format_organization_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Input: 
+data_frame: pandas.dataframe 
+[Dataframe containing only the allowed org_types and methods]</p>
+<p>org_type: String 
+[It receives the current org type to be processed].</p>
+<p>Aim:
+Returns a set of years and number of records for that year in particular org_type</p>
+<p>Output:
+updated_x_plots : pandas.dataframe
+[Contains list of years for that org_type]</p>
+<p>updated_y_plots : pandas.dataframe
+[Returns average number of records for that year for a particular org_type. nan value is inserted if no value is present]</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="q4.get_data_methods">
+<span class="sig-prename descclassname"><span class="pre">q4.</span></span><span class="sig-name descname"><span class="pre">get_data_methods</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_methods</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#q4.get_data_methods" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>Input: </dt><dd><p>inp_input_pathfile: String 
+[It is the address of the input csv file.]</p>
+<p>allowed_org_types: List 
+[It contains the list of org types allowed].</p>
+</dd>
+</dl>
+<p>Aim:
+Returns a dataframe only consisting values from allowed methods</p>
+<p>Output:
+filtered_df = pandas.dataframe
+[A dataframe only consisting values from allowed methods]</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="q4.get_data_org">
+<span class="sig-prename descclassname"><span class="pre">q4.</span></span><span class="sig-name descname"><span class="pre">get_data_org</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_org_types</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#q4.get_data_org" title="Permalink to this definition">¶</a></dt>
+<dd><p>Input: 
+inp_input_pathfile: String 
+[It is the address of the input csv file.]</p>
+<p>allowed_org_types: List 
+[It contains the list of org types allowed].</p>
+<p>Aim:
+Returns a dataframe only consisting values from allowed org types</p>
+<p>Output:
+filtered_df = pandas.dataframe
+[A dataframe only consisting values from allowed org types]</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="q4.plot_methods_data">
+<span class="sig-prename descclassname"><span class="pre">q4.</span></span><span class="sig-name descname"><span class="pre">plot_methods_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filtered_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#q4.plot_methods_data" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Input: </dt><dd><p>filtered_df: pandas.dataframe 
+[Dataframe containing only the allowed org_types and methods]</p>
+</dd>
+<dt>Aim:</dt><dd><p>Plot a boxplot for each method of data breach, showing the min and max records of data breach for each year.</p>
+</dd>
+<dt>Output:</dt><dd><p>method.png, is the image of the plot generated and it is stored in PWD.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="q4.plot_organization_data">
+<span class="sig-prename descclassname"><span class="pre">q4.</span></span><span class="sig-name descname"><span class="pre">plot_organization_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filtered_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_org_types</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#q4.plot_organization_data" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>Input: </dt><dd><p>filtered_df: pandas.dataframe 
+[Dataframe containing only the allowed org_types and methods]</p>
+<p>allowed_org_types: List 
+[It contains the list of org types allowed].</p>
+</dd>
+<dt>Aim:</dt><dd><p>Loop through all allowed org_types, and for each org_type plot a line showing the mean no. of data breach records per year for that type.</p>
+</dd>
+<dt>Output:</dt><dd><p>organization.png, is the image of the plot generated and it is stored in PWD</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 

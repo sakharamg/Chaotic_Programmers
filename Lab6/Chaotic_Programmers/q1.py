@@ -167,17 +167,19 @@ def alohomora(n, m):
 #			[5 5 7 7],
 #			[6 6 8 8]]
 def glisseo(P,Q,R,S):
-    """
-    	Arguments:
-    		'P': string, eg. '2 2; 3 3'
-    		'Q': string, eg. '1 1; 4 4'
-    		'R': string, eg. '5 5; 6 6'
-    		'S': string, eg. '7 7; 8 8'
-    	Descripton: 
-    		Interpret the string to matrix and return the numpy matrix in the form [[P`,Q`],[R`,S`]] as given in the problem statement
-    	Return:
-    		return the numpy matrix 
-    """
+
+	"""
+	Arguments:
+		'P': string, eg. '2 2; 3 3'
+		'Q': string, eg. '1 1; 4 4'
+		'R': string, eg. '5 5; 6 6'
+		'S': string, eg. '7 7; 8 8'
+	Descripton: 
+		Interpret the string to matrix and return the numpy matrix in the form [[P`,Q`],[R`,S`]] as given in the problem statement
+	Return:
+		return the numpy matrix 
+	"""
+	
 	a = np.matrix(P)
 	b = np.matrix(Q)
 	c = np.matrix(R)
@@ -194,16 +196,16 @@ def glisseo(P,Q,R,S):
 # 'axis': str; axis ∈ {'X','Y','Z'}
 # return type: float Ndarray; dim: Nx3
 def expelliarmus(arr, theta, axis):
-    """
-    	Arguments:
-    		'arr': float Ndarray; dim: Nx3, 
+	"""
+	Arguments:
+		'arr': float Ndarray; dim: Nx3, 
 		'theta': float; 0≤theta<360 (in degrees)
 		'axis': str; axis ∈ {'X','Y','Z'}
-    	Descripton: 
-    		Rotate counter-clockwise by angle theta (rotate all N (3-dimensional) points of the matrix about the given axis)
-    	Return:
-    		float Ndarray; dim: Nx3
-    """
+	Descripton: 
+		Rotate counter-clockwise by angle theta (rotate all N (3-dimensional) points of the matrix about the given axis)
+	Return:
+		float Ndarray; dim: Nx3
+	"""
 	rad = np.radians(theta)
 	arr=np.array(arr).astype(np.float)
 	if axis == 'X':
