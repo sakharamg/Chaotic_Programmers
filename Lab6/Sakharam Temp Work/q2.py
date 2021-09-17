@@ -5,7 +5,7 @@ class TWODMAT:
         	Normalise the matrix "arr" along its columns. 
         	
         Arguments:
-        	arr: MxN dimensional matrix (need not be numpy)
+        	arr: MxN dimensional matrix
         
         Return:
         	Normalised numpy array
@@ -20,7 +20,7 @@ class TWODMAT:
         	Implement a sum-filter of 1-d integer array "arr"
         
         Arguments:
-        	arr: array of shape (n)
+        	arr: array of shape (n) 
         	k: kernel size
         
         Return:

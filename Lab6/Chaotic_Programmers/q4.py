@@ -6,7 +6,7 @@ import seaborn as sns
 import sys
 
 
-def get_data(input_path, allowed_org_types, allowed_methods):
+def get_data_org(input_path, allowed_org_types):
 	"""
     Input: 
 	    inp_input_pathfile: String 
@@ -14,12 +14,9 @@ def get_data(input_path, allowed_org_types, allowed_methods):
 	    
 	    allowed_org_types: List 
 	    [It contains the list of org types allowed]. 
-	    
-	    allowed_methods: List
-	    [It contains the allowed data breach methods]
     
     Aim:
-    	Returns a dataframe only consisting values from allowed org types and methods
+    	Returns a dataframe only consisting values from allowed org types
     
     Output:
     	filtered_df = pandas.dataframe
@@ -27,7 +24,29 @@ def get_data(input_path, allowed_org_types, allowed_methods):
 
     """
 	dataframe = pd.read_csv(input_path)
-	filtered_df = dataframe.loc[(dataframe['Organization type'].isin(allowed_org_types)) & (dataframe['Method'].isin(allowed_methods))]
+	filtered_df = dataframe.loc[(dataframe['Organization type'].isin(allowed_org_types))]
+	return filtered_df
+
+
+def get_data_methods(input_path, allowed_methods):
+	"""
+    Input: 
+	    inp_input_pathfile: String 
+	    [It is the address of the input csv file.]
+	    
+	    allowed_org_types: List 
+	    [It contains the list of org types allowed]. 
+	        
+    Aim:
+    	Returns a dataframe only consisting values from allowed methods
+    
+    Output:
+    	filtered_df = pandas.dataframe
+    	[A dataframe only consisting values from allowed org types and methods]
+
+    """
+	dataframe = pd.read_csv(input_path)
+	filtered_df = dataframe.loc[(dataframe['Method'].isin(allowed_methods))]
 	return filtered_df
 
 
@@ -83,7 +102,7 @@ def plot_organization_data(filtered_df, allowed_org_types):
 		xplot, yplot = format_organization_data(filtered_df, org_type)
 		ax.plot(xplot, yplot, label = org_type)
 		ax.set_yscale('log')
-	ax.legend(title = "Organization type", loc = 'lower right')
+	ax.legend(title = "Organization type", loc = 'lower right',fontsize="8")
 	plt.title("Type of organizations affected by Data breaches per year")
 	plt.xlabel("Year")
 	plt.ylabel("Records")
@@ -107,7 +126,7 @@ def plot_methods_data(filtered_df):
     """
 	sns.boxplot(x='Year', y='Records', hue='Method',data=filtered_df)
 	plt.yscale('log')
-	plt.legend(loc='upper left', title = "Method")
+	plt.legend(loc='upper left', title = "Method",fontsize="8")
 	plt.title("Type of Methods used for Data breaching per year")
 	plt.savefig('method.png')
 	plt.clf()
@@ -115,10 +134,10 @@ def plot_methods_data(filtered_df):
 
 
 input_path = sys.argv[2]
-print('input: ', input_path)
 allowed_org_types = ['academic', 'financial', 'gaming', 'government', 'healthcare', 'military', 'retail', 'tech', 'telecoms', 'web']
 allowed_methods = ['hacked', 'poor security', 'lost', 'accidentally published', 'inside job']
 
-filtered_df = get_data(input_path, allowed_org_types, allowed_methods)
-plot_organization_data( filtered_df, allowed_org_types)
-plot_methods_data(filtered_df)
+filtered_df_org = get_data_org(input_path, allowed_org_types)
+filtered_df_methods = get_data_methods(input_path,  allowed_methods)
+plot_organization_data( filtered_df_org, allowed_org_types)
+plot_methods_data(filtered_df_methods)
