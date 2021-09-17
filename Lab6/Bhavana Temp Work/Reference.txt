@@ -1,0 +1,23 @@
+Q1:
+
+a) Reshape array: https://www.geeksforgeeks.org/reshape-numpy-array/
+   Flatten:  https://www.geeksforgeeks.org/reshape-numpy-array/
+
+b) Transpose: https://numpy.org/doc/stable/reference/generated/numpy.transpose.html
+    https://www.w3schools.com/python/numpy/numpy_array_reshape.asp
+
+c)  swapaxes: https://www.w3resource.com/numpy/manipulation/swapaxes.php
+
+d) Narray: https://www.geeksforgeeks.org/numpy-ndarray/
+
+e) to concatenate: https://www.geeksforgeeks.org/numpy-concatenate-function-python/
+
+f) numpy float: https://www.w3schools.com/python/numpy/numpy_data_types.asp
+   https://numpy.org/doc/stable/reference/
+
+Q3:
+  
+  file in python: https://www.w3schools.com/python/python_file_handling.asp
+                   https://www.geeksforgeeks.org/open-a-file-in-python/
+                   https://www.kite.com/python/answers/how-to-read-a-file-line-by-line-backwards-in-python
+
