@@ -4,13 +4,17 @@ import glob
 import sys
 
 def function_q3(inp_file_path, out_folder_path):
+
   """
+  	
   	Parameters:	inp_file_path [Type:string]
   				Relative path to the directory containing files
   			out_folder_path [Type:string]
   				Relative path to the directory which will contain all the pairs of files whose contents are reverse of each other
   	Objective:	The function files pairs of files in inp_file_path that are reverse of each other and saves in the out_folder_path directory
+  	
   """
+  
   if os.path.isdir(out_folder_path):
     os.rmdir(out_folder_path)
   os.mkdir(out_folder_path)

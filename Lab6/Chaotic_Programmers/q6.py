@@ -11,6 +11,8 @@ def processData( input_path, output_path ):
     	output_path [Type: String]: relative path to the output json file
     """
     '''  write your code here '''
+    print(input_path)
+    print(output_path)
     output_data=[{},{}]
     output_data[0]["age_grp"]="21-30"
     output_data[1]["age_grp"]="31-40"

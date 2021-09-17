@@ -1,0 +1,7 @@
+q5 module
+=========
+
+.. automodule:: q5
+   :members:
+   :undoc-members:
+   :show-inheritance:

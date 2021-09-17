@@ -21,7 +21,7 @@ class TWODMAT:
         
         Arguments:
         	arr: array of shape (n) 
-        	k: kernel size
+        	k: integer, kernel size
         
         Return:
         	an int array of shape (n+k-1) 
@@ -38,7 +38,7 @@ class TWODMAT:
         	
         Arguments:
         	arr: a matrix of shape (m,n)
-        	k: required number of top positions 
+        	k: integer, required number of top positions 
         
         Return:
         	an integer matrix of shape (m, k),
