@@ -20,7 +20,7 @@ def get_data_org(input_path, allowed_org_types):
     
     Output:
     	filtered_df = pandas.dataframe
-    	[A dataframe only consisting values from allowed org types and methods]
+    	[A dataframe only consisting values from allowed org types]
 
     """
 	dataframe = pd.read_csv(input_path)
@@ -42,7 +42,7 @@ def get_data_methods(input_path, allowed_methods):
     
     Output:
     	filtered_df = pandas.dataframe
-    	[A dataframe only consisting values from allowed org types and methods]
+    	[A dataframe only consisting values from allowed methods]
 
     """
 	dataframe = pd.read_csv(input_path)
