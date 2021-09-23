@@ -19,8 +19,8 @@ class CSE_Courses:
 		### START CODE HERE ###
 		conn = sqlite3.connect('CSE_DB')
 		c = conn.cursor()
-		c.execute('''CREATE TABLE IF NOT EXISTS CSE_Instructors([Instructor] TEXT,[Research_Interests] TEXT,[Email] TEXT)''')
-		c.execute('''CREATE TABLE IF NOT EXISTS CSE_Courses([Course_Code] TEXT,[Course_Name] TEXT,[Instructor] TEXT)''')
+		c.execute('''CREATE TABLE CSE_Instructors([Instructor] TEXT,[Research_Interests] TEXT,[Email] TEXT)''')
+		c.execute('''CREATE TABLE CSE_Courses([Course_Code] TEXT,[Course_Name] TEXT,[Instructor] TEXT)''')
 		conn.commit()
 		### END CODE HERE ###
 
@@ -81,11 +81,11 @@ class CSE_Courses:
 		details=[]
 		session = HTMLSession()
 		r = session.get(url)
-		r.html.render()
+		r.html.render(timeout=10000000)
 		soup = BeautifulSoup(r.html.html, 'html5lib')
 		current=soup.find('div', attrs = {'id':'current'})
 		for row in current:
-			instructor=row.a.text.strip()
+			instructor=row.a.text.strip().replace("(Department Head)","").strip()
 			interests=row.find('div', attrs = {'class':'body'}).text.strip()
 			email_split=row.findAll('div', attrs = {'class':'body'})[1].text.split(',')[0].split('  ')
 			email=(email_split[0]+"@"+email_split[1]+"."+email_split[2]+"."+email_split[3]+"."+email_split[4]).strip()
@@ -198,9 +198,9 @@ class CSE_Courses:
 		### START CODE HERE ###
 		conn = sqlite3.connect('CSE_DB')
 		c = conn.cursor()
-		c.execute("DELETE * FROM CSE_Courses")
-		c.execute("DELETE * FROM CSE_Instructors")
-		c.execute("DELETE * FROM CSE_Mapped")
+		c.execute("DELETE FROM CSE_Courses")
+		c.execute("DELETE FROM CSE_Instructors")
+		c.execute("DELETE FROM CSE_Mapped")
 		conn.commit()
 		### END CODE HERE ###
 
@@ -213,6 +213,6 @@ if __name__ == "__main__":
 	details = cse.get_instructors(url2)
 	cse.insert_CSE_Courses(courses)
 	cse.insert_CSE_Instructors(details)
+	#cse.delete_data()
 	cse.map_data()
-	cse.delete_data()
 	cse.print_data()
