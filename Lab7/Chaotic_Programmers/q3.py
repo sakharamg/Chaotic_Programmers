@@ -1,5 +1,9 @@
 # Import packages
-None
+import sqlite3
+import requests
+from bs4 import BeautifulSoup
+from requests_html import HTMLSession
+from prettytable import PrettyTable
 
 ## NOTE : 
 ## 1. DO NOT CHANGE THE NAME OF ANY FUNCTION OR ANY ARGUMENT OR CLASS NAME. 
@@ -13,7 +17,13 @@ class CSE_Courses:
 		Create the database CSE_DB and tables CSE_Courses, and CSE_Instructors.
 		"""
 		### START CODE HERE ###
-		None
+		conn = sqlite3.connect('CSE_DB')
+		c = conn.cursor()	
+		c.execute('''CREATE TABLE IF NOT EXISTS CSE_Instructors([Instructor] TEXT,[Research_Interests] TEXT,[Email] TEXT)''')
+		c.execute('''CREATE TABLE IF NOT EXISTS CSE_Courses([Course_Code] TEXT,[Course_Name] TEXT,[Instructor] TEXT)''')
+		conn.commit()
+		c.close()
+		conn.close()
 		### END CODE HERE ###
 
 	def get_courses(self,url):
@@ -31,7 +41,26 @@ class CSE_Courses:
 		"""
 		assert(isinstance(url,str))
 		### START CODE HERE ###
-		None
+		courses=[]
+		URL=url
+		r = requests.get(URL)
+		soup = BeautifulSoup(r.content, 'html5lib')
+		table = soup.findAll('td', attrs = {'class':'greybodytd'})
+		col=0
+		for cell in table:
+			if(col%3==0):
+				#cell left
+				course_code=cell.a.text.strip()
+			elif col%3==1:
+				#cell mid
+				course_name=cell.text.strip().replace("More Info","").strip()
+			else:
+				#cell right
+				course_instr=cell.text.strip().replace("Prof.","").strip()
+				if course_instr=="---":
+					course_instr="NA"
+				courses.append([course_code,course_name,course_instr])
+			col+=1
 		### END CODE HERE ###
 		assert(isinstance(courses,list) and isinstance(courses[0],list))
 		return courses
@@ -51,7 +80,18 @@ class CSE_Courses:
 		"""
 		assert(isinstance(url,str))
 		### START CODE HERE ###
-		None
+		details=[]
+		session = HTMLSession()
+		r = session.get(url)
+		r.html.render()
+		soup = BeautifulSoup(r.html.html, 'html5lib')
+		current=soup.find('div', attrs = {'id':'current'})
+		for row in current:
+			instructor=row.a.text.strip().replace("(Department Head)","").strip()
+			interests=row.find('div', attrs = {'class':'body'}).text.strip()
+			email_split=row.findAll('div', attrs = {'class':'body'})[1].text.split(',')[0].split('  ')
+			email=(email_split[0]+"@"+email_split[1]+"."+email_split[2]+"."+email_split[3]+"."+email_split[4]).strip()
+			details.append([instructor,interests,email])
 		### END CODE HERE ###
 		assert(isinstance(details,list) and isinstance(details[0],list))
 		return details
@@ -71,7 +111,13 @@ class CSE_Courses:
 		"""
 		assert(isinstance(courses,list) and isinstance(courses[0],list))
 		### START CODE HERE ###
-		None
+		conn = sqlite3.connect('CSE_DB')
+		c = conn.cursor()
+		for course in courses:
+			c.execute("INSERT INTO CSE_Courses VALUES('"+course[0]+"','"+course[1]+"','"+course[2]+"')")
+		conn.commit()
+		c.close()
+		conn.close()
 		### END CODE HERE ###
 
 	def insert_CSE_Instructors(self,details):
@@ -93,7 +139,13 @@ class CSE_Courses:
 		"""
 		assert(isinstance(details,list) and isinstance(details[0],list))
 		### START CODE HERE ###
-		None
+		conn = sqlite3.connect('CSE_DB')
+		c = conn.cursor()
+		for detail in details:
+			c.execute("INSERT INTO CSE_Instructors VALUES('"+detail[0]+"','"+detail[1]+"','"+detail[2]+"')")
+		conn.commit()
+		c.close()
+		conn.close()
 		### END CODE HERE ###
 
 	def map_data(self):
@@ -108,7 +160,13 @@ class CSE_Courses:
 		Nothing
 		"""
 		### START CODE HERE ###
-		None
+		conn = sqlite3.connect('CSE_DB')
+		c = conn.cursor()
+		c.execute("CREATE TABLE IF NOT EXISTS CSE_Mapped ([Course_Code] TEXT,[Instructor] TEXT,[Email] TEXT)")
+		c.execute("INSERT INTO CSE_Mapped SELECT Course_Code, CSE_Courses.Instructor, Email FROM CSE_Courses inner join CSE_Instructors on CSE_Courses.Instructor=CSE_Instructors.Instructor")
+		conn.commit()
+		c.close()
+		conn.close()
 		### END CODE HERE ###
 
 	def print_data(self):
@@ -124,7 +182,17 @@ class CSE_Courses:
 		Nothing
 		"""
 		### START CODE HERE ###
-		None
+		conn = sqlite3.connect('CSE_DB')
+		c = conn.cursor()
+		c.execute("SELECT * FROM CSE_Mapped")
+		cse_mapped_data=c.fetchall()
+		myTable = PrettyTable(["Course Code","Instructor","Email"])
+		for x in cse_mapped_data:
+			myTable.add_row(list(x))
+		print(myTable)
+		conn.commit()
+		c.close()
+		conn.close()
 		### END CODE HERE ###
 
 	def delete_data(self):
@@ -139,17 +207,23 @@ class CSE_Courses:
 		"""
 
 		### START CODE HERE ###
-		None
+		conn = sqlite3.connect('CSE_DB')
+		c = conn.cursor()
+		c.execute("DELETE FROM CSE_Courses")
+		c.execute("DELETE FROM CSE_Instructors")
+		c.execute("DELETE FROM CSE_Mapped")
+		conn.commit()
+		c.close()
+		conn.close()
 		### END CODE HERE ###
 
 if __name__ == "__main__":
 	url1 = "https://www.cse.iitb.ac.in/archive/page136"
 	url2 = "https://www.cse.iitb.ac.in/people/faculty.php"
-
 	cse = CSE_Courses()
 	courses = cse.get_courses(url1)
 	details = cse.get_instructors(url2)
-	# cse.delete_data()
+	#cse.delete_data()
 	cse.insert_CSE_Courses(courses)
 	cse.insert_CSE_Instructors(details)
 	cse.map_data()
