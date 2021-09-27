@@ -14,7 +14,7 @@ def find_prime(n,m):
     	for A in range(2,math.floor(math.sqrt(B))+1):
     		if B%A==0:
     			flag=0
-    			break;
+    			break
     	if(flag==1):
     		pcount+=1
     return pcount
