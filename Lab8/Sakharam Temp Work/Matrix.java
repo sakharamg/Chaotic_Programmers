@@ -1,4 +1,4 @@
-
+import java.lang.Float;
 class Matrix{
 	float[][] twoD_arr;
 	Matrix(int i)
@@ -107,7 +107,7 @@ class Matrix{
 			{
 				for(int b=0;b<dim_arr1[1];b++)
 				{
-					if(twoD_arr[a][b]!=-1*m.twoD_arr[a][b])
+					if(Float.compare(twoD_arr[a][b],-1*m.twoD_arr[a][b])!=0)
 					{
 						flag=-1;
 						break;
@@ -145,10 +145,10 @@ class Matrix{
 			System.out.println();
 		}
 	}
-	/*public static void main(String args[]){
+	public static void main(String args[]){
 		int row=10,col=20;
 		Matrix a=new Matrix(row,col,7.0f);
-		Matrix b=new Matrix(row,col,6.0f);
+		Matrix b=new Matrix(row,col,9.0f);
 		float c[][]=a.mat_sub(b);
 		for(int x=0;x<row;x++)
 		{
@@ -158,5 +158,6 @@ class Matrix{
 			}
 			System.out.println();
 		}
-	}*/
+		a.additive_inv(b);
+	}
 }  
