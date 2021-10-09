@@ -41,7 +41,7 @@ clean:
 	$(RM) $(RMFLAG) $(path_folder) $(output)
 
 all: EXTRAFLAG:= -pthread -g
-run: port:=8089
+
 run: out_param:= localhost $(port)
 run:	$(output)
 	./$< $(out_param)

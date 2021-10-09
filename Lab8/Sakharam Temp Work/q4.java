@@ -2,7 +2,7 @@ import java.io.*;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 import java.lang.Thread;
-class q4 extends Thread {
+class q4 implements Runnable {
     public void run()
     {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
@@ -22,7 +22,7 @@ class q4 extends Thread {
     }
     public static void main(String[] args)
     {
-        q4 g = new q4(); // creating thread
-        g.start(); // starting thread
+        Thread t1 =new Thread(new q4());
+        t1.start(); // starting thread
     }
 }

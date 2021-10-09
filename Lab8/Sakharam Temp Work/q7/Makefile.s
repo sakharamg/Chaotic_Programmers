@@ -39,7 +39,7 @@ clean: RMFLAG:= -rf
 clean:
 	$(RM) $(RMFLAG) $(path_folder) $(output)
 
-run: port:=8089
+
 run:	$(output)
 	./$< $(port)
 

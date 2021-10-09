@@ -10,7 +10,7 @@ export CC
 export path_folder
 
 .SILENT: clean
-.PHONY: all clean run
+.PHONY: all clean run-server run-client
 
 all:
 	$(CD) $(SERVER_PATH);$(MAKE) $(CDFLAG) all
@@ -19,6 +19,9 @@ all:
 clean:
 	$(CD) $(SERVER_PATH);$(MAKE) $(CDFLAG) clean
 	$(CD) $(CLIENT_PATH);$(MAKE) $(CDFLAG) clean
-run:
+
+run-server:
 	$(CD) $(SERVER_PATH);$(MAKE) $(CDFLAG) run
+
+run-client:
 	$(CD) $(CLIENT_PATH);$(MAKE) $(CDFLAG) run
