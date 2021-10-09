@@ -7,7 +7,11 @@ public class q1 {
 
     public static void main(String[] args) {
 
-        
+        String file1path = args[0];
+	String file2path = args[1];
+	
+	Map<String, Integer> map = new LinkedHashMap<>();
+
     }
 
 }

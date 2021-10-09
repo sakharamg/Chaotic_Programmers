@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
-public class q1 {
+public class Q1 {
 
 	public static void main(String[] args) {
 
@@ -24,17 +24,17 @@ public class q1 {
 			BufferedReader f1buffer = new BufferedReader(new FileReader(f1));
 			String line;
 			while ((line = f1buffer.readLine()) != null) {
-				if (!map.containsKey(line.strip())) {
-					map.put(line.strip(), 1);
+				if (!map.containsKey(line)) {
+					map.put(line, 1);
 				} else {
-					map.put(line.strip(), map.get(line.strip()) + 1);
+					map.put(line, map.get(line) + 1);
 				}
 			}
 			f1buffer.close();
 			BufferedReader f2buffer = new BufferedReader(new FileReader(f2));
 			while ((line = f2buffer.readLine()) != null) {
-				if (map.containsKey(line.strip())) {
-					map.remove(line.strip());
+				if (map.containsKey(line)) {
+					map.remove(line);
 				}
 			}
 			f2buffer.close();
@@ -43,13 +43,13 @@ public class q1 {
 				@Override
 				public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
 					if (o1.getValue().compareTo(o2.getValue()) == 0) {
-						return o1.getKey().compareTo(o2.getKey());
+						return -o1.getKey().compareTo(o2.getKey());
 					} else
-						return -1*o1.getValue().compareTo(o2.getValue());
+						return o1.getValue().compareTo(o2.getValue());
 
 				}
 			});
-			//Collections.reverse(l);
+			Collections.reverse(l);
 
 			for (int i = 0; i < l.size(); i++) {
 				System.out.println(l.get(i).getKey() + "," + l.get(i).getValue());
@@ -58,4 +58,4 @@ public class q1 {
 			e.printStackTrace();
 		}
 	}
-}
+}	
