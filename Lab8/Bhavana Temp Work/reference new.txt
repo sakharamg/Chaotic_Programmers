@@ -1,0 +1,24 @@
+Gautam Bhavana
+213050082
+
+
+Q1:
+  
+ Java filesystem: https://www.javatpoint.com/java-file-class
+
+ Delete content in file: https://www.geeksforgeeks.org/java-program-delete-certain-text-file/
+   
+  https://www.geeksforgeeks.org/different-ways-to-copy-content-from-one-file-to-another-file-in-java/
+
+
+
+Q3:
+
+
+   Regex: https://www.javatpoint.com/java-regex
+  
+   Pattern matching: https://www.w3schools.com/java/java_regex.asp
+   
+   https://www.geeksforgeeks.org/regular-expressions-in-java/
+
+    https://beginnersbook.com/2014/08/java-regex-tutorial/
