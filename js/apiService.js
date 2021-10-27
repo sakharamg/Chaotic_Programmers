@@ -70,7 +70,7 @@ studentCompanionApp.factory('apiService', ['Restangular', function(Restangular) 
 
     /**
      * Gets currently logged in user
-     * @returns {list} Logged in User details
+     * @returns {list} Loggen In User details
      */
     function getCurrentUser() {
         return Restangular.one('get_logged_in_user').get()
